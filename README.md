@@ -16,7 +16,7 @@ A sleek and interactive stopwatch application built with **HTML**, **CSS**, and 
 
 ## 📁 Files Included
 
-- `clock.html` — Main HTML file with structure
+- `index.html` — Main HTML file with structure
 - `clock.css` — Styling and animations
 - `clock.js` — Stopwatch logic and DOM manipulation
 
