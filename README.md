@@ -14,7 +14,8 @@ A sleek and interactive stopwatch application built with **HTML**, **CSS**, and 
 - Responsive for mobile and desktop screens
 - Smooth and modern UI
 
-## 📁 Files Included
+## ## 🌐 Live Demo
+[View Stopwatch App]  https://pawankesarwani1.github.io/PRODIGY_WD_02/
 
 - `index.html` — Main HTML file with structure
 - `style.css` — Styling and animations
