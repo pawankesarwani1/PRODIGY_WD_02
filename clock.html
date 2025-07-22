@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stopwatch</title>
+  <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+  <div class="stopwatch-container">
+  
+<div id="track">
+  <svg id="runner" width="60" viewBox="0 0 100 100">
+    <circle cx="50" cy="20" r="6" fill="#f1c40f" />
+    <line x1="50" y1="26" x2="50" y2="50" stroke="#34495e" stroke-width="4" />
+    <line class="arm arm-left" x1="50" y1="30" x2="35" y2="40" stroke="#3498db" stroke-width="3" />
+    <line class="arm arm-right" x1="50" y1="30" x2="65" y2="40" stroke="#3498db" stroke-width="3" />
+    <line class="leg leg-left" x1="50" y1="50" x2="40" y2="70" stroke="#2ecc71" stroke-width="3" />
+    <line class="leg leg-right" x1="50" y1="50" x2="60" y2="70" stroke="#2ecc71" stroke-width="3" />
+  </svg>
+</div>
+
+<div class="logo">
+  ⏱️Stopwatch
+</div>
+
+    <div id="display">00:00:00.000</div>
+    <div class="controls">
+      <button onclick="start()">Start</button>
+      <button onclick="pause()">Pause</button>
+      <button onclick="reset()">Reset</button>
+      <button onclick="lap()">Lap</button>
+    </div>
+    <ul id="laps"></ul>
+  </div>
+
+  <script src="clock.js"></script>
+</body>
+</html>

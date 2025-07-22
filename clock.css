@@ -1,0 +1,178 @@
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .stopwatch-container {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+.logo {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: space-between;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Animated gradient background */
+  background: linear-gradient(-45deg, #ff6ec4, #7873f5, #1fd1f9, #c4fff9);
+  background-size: 600% 600%;
+  animation: gradientBackground 15s ease infinite;
+  color: #fff;
+}
+
+.stopwatch-container {
+  position: relative;
+  width: 360px; 
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease-in-out;
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#display {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 20px 0;
+  letter-spacing: 2px;
+  transition: color 0.3s;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+  gap: 6px;
+  margin-top: 20px;
+}
+.controls button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #8900f2, #0c0c0c);
+  color: white;
+  transition: transform 0.2s ease, background 0.3s ease;
+  min-width: 80px;
+}
+
+.controls button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #fc466b, #1e1e1d);
+}
+
+#laps {
+  list-style-type: none;
+  margin-top: 30px;
+  padding: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+#laps li {
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+#track {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+#runner {
+  width: 60px;
+  height: 60px;
+}
+
+#runner.paused {
+  opacity: 0.4;
+  filter: grayscale(100%);
+}
+
+
+#lap-runners {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  border-top: 2px dashed #fff;
+  margin-top: 20px;
+}
+
+@keyframes swing-arm-left {
+  0%, 100% { transform: rotate(20deg); transform-origin: 50px 30px; }
+  50% { transform: rotate(-20deg); transform-origin: 50px 30px; }
+}
+
+@keyframes swing-arm-right {
+  0%, 100% { transform: rotate(-20deg); transform-origin: 50px 30px; }
+  50% { transform: rotate(20deg); transform-origin: 50px 30px; }
+}
+
+@keyframes swing-leg-left {
+  0%, 100% { transform: rotate(-20deg); transform-origin: 50px 50px; }
+  50% { transform: rotate(20deg); transform-origin: 50px 50px; }
+}
+
+@keyframes swing-leg-right {
+  0%, 100% { transform: rotate(20deg); transform-origin: 50px 50px; }
+  50% { transform: rotate(-20deg); transform-origin: 50px 50px; }
+}
+
+#runner.running .arm-left {
+  animation: swing-arm-left 0.6s infinite ease-in-out;
+}
+
+#runner.running .arm-right {
+  animation: swing-arm-right 0.6s infinite ease-in-out;
+}
+
+#runner.running .leg-left {
+  animation: swing-leg-left 0.6s infinite ease-in-out;
+}
+
+#runner.running .leg-right {
+  animation: swing-leg-right 0.6s infinite ease-in-out;
+}
+
+#runner.paused .arm-left,
+#runner.paused .arm-right,
+#runner.paused .leg-left,
+#runner.paused .leg-right {
+  animation: none;
+}
+
+
+
